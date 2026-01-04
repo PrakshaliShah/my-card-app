@@ -71,8 +71,32 @@ html, body, #root {
 
 /* RESULTS GRID */
 .results-scroll-area { padding: 60px 0; background: #fafafa; flex-grow: 1; overflow-y: auto; }
-.card-grid-display { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.card-grid {
+  display: grid;
+  /* Minimum 300px per card, expands to fill space */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 20px;
+  padding: 15px;
+}
 .premium-ui-card { background: white; border: 1px solid #eee; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; }
+
+/* MOBILE-SPECIFIC ADJUSTMENTS */
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr; /* Single column on phones */
+    padding: 10px;
+  }
+  
+  .card-title {
+    font-size: 1.2rem; /* Better readability on small screens */
+  }
+}
+
+.view-details-btn {
+  min-height: 44px; /* Standard minimum touch target size */
+  width: 100%;     /* Full width buttons are easier to tap on mobile */
+  font-size: 16px;
+}
 
 /* Aligning the title and back button to opposite sides */
 .results-top-header { 
@@ -128,3 +152,4 @@ html, body, #root {
 .brand-icon {
   font-size: 1.8rem;    /* Makes the emoji slightly more prominent */
 }
+
