@@ -1,0 +1,130 @@
+:root {
+  --brand-purple: #5d5fef;
+  --true-black: #000000; /* Force highest contrast */
+  --deep-gray: #374151;
+  --muted-gray: #6b7280;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root { 
+  height: 100%; 
+  width: 100%;
+  background: #ffffff;
+  font-family: 'Inter', sans-serif;
+  color: var(--true-black); /* Global text color */
+}
+
+/* THE CENTERING ENGINE */
+.site-master-container { display: flex; flex-direction: column; height: 100vh; }
+.inner-constraint { width: 90%; max-width: 1100px; margin: 0 auto; }
+
+/* NAV */
+.navbar-fixed { padding: 25px 0; border-bottom: 1px solid #f3f4f6; flex-shrink: 0; }
+.flex-row { display: flex; justify-content: space-between; align-items: center; }
+.app-brand { font-size: 1.5rem; font-weight: bold; cursor: pointer; color: var(--true-black); }
+.app-brand strong { color: var(--brand-purple); }
+.nav-menu-links span { margin-left: 25px; color: var(--muted-gray); font-weight: 500; cursor: pointer; }
+
+/* THE CENTERING LOCK */
+.absolute-center-engine {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 0;
+}
+.hero-content-stack { width: 100%; max-width: 850px; }
+.black-text { color: var(--true-black) !important; margin-bottom: 5px; }
+.brand-accent-text { font-size: 3rem; color: var(--brand-purple); margin-bottom: 50px; font-weight: 400; }
+
+/* INPUT TEXT FIX */
+.input-search-area { width: 100%; max-width: 750px; margin: 0 auto; }
+.ai-input-field-dark {
+  width: 100%;
+  padding: 24px 30px;
+  border-radius: 14px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--true-black) !important; /* Force black text when typing */
+  outline: none;
+}
+.cta-btn-primary {
+  width: 100%;
+  padding: 20px;
+  background: var(--brand-purple);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* FEATURE BOXES */
+.feature-row-centered { display: flex; gap: 30px; margin-top: 80px; text-align: left; }
+.feature-box { flex: 1; background: #fcfcfc; padding: 30px; border-radius: 16px; border: 1px solid #f3f4f6; }
+.gray-text { color: var(--deep-gray) !important; }
+
+/* RESULTS GRID */
+.results-scroll-area { padding: 60px 0; background: #fafafa; flex-grow: 1; overflow-y: auto; }
+.card-grid-display { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.premium-ui-card { background: white; border: 1px solid #eee; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; }
+
+/* Aligning the title and back button to opposite sides */
+.results-top-header { 
+  display: flex; 
+  justify-content: space-between; /* Pushes title to left and button to right */
+  align-items: center;           /* Keeps them perfectly level vertically */
+  margin-bottom: 40px; 
+}
+
+/* Optional: Styling for the back button to look like a clean link */
+.back-nav-btn { 
+  background: transparent; 
+  border: none; 
+  color: var(--brand-purple); 
+  font-weight: 600; 
+  cursor: pointer; 
+  font-size: 1rem;
+  transition: opacity 0.2s;
+}
+
+.back-nav-btn:hover {
+  opacity: 0.8;
+}
+
+/* THE ANNUAL FEE SPACE FIX */
+.footer-flex-stack {
+  border-top: 1px solid #f9fafb;
+  margin-top: 25px;
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.fee-data-group { display: flex; flex-direction: column; gap: 12px; } /* Gap creates the space */
+.fee-label-top { font-size: 0.7rem; color: #9ca3af; letter-spacing: 0.5px; }
+.fee-amount-large { font-size: 1.4rem; color: var(--true-black); font-weight: 800; }
+
+.inst-label-blue { color: var(--brand-purple); font-weight: 800; font-size: 0.7rem; text-transform: uppercase; }
+.reward-tag-badge { background: #eff6ff; color: #1e40af; padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; margin: 15px 0; font-weight: bold; width: fit-content; }
+.rewards-summary-text { font-size: 0.95rem; color: var(--deep-gray); line-height: 1.6; flex-grow: 1; }
+.btn-action-view { background: #2563eb; color: white; border: none; padding: 12px 22px; border-radius: 10px; font-weight: 600; cursor: pointer; }
+
+/* Logo alignment fix */
+.app-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;       /* Aligns emoji and text in a row */
+  align-items: center;  /* Vertically centers the emoji with the text */
+  gap: 10px;            /* Adds clear space between the emoji and "OmniCard" */
+}
+
+.brand-icon {
+  font-size: 1.8rem;    /* Makes the emoji slightly more prominent */
+}
